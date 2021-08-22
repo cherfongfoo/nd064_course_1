@@ -1,17 +1,27 @@
 import sqlite3
 import logging
+import sys
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
-total_db_connection = 0
+stdout_handler = logging.StreamHandler(sys.stdout)
+stderr_handler = logging.StreamHandler(sys.stderr)
+handlers = [stderr_handler, stdout_handler]
 
-# Function to get a database connection.
+format_output = '%(levelname)s:%(name)s:%(asctime)s, %(message)s'
+
+logging.basicConfig(format=format_output, datefmt='%d/%m/%Y, %H:%M:%S' ,level=logging.DEBUG, handlers=handlers)
+# logging.basicConfig(format=format_output, datefmt='%d/%m/%Y, %H:%M:%S' ,level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+logger.addHandler(stdout_handler)
+logger.addHandler(stderr_handler)
+logger.propagate = False
+
 # This function connects to database with the name `database.db`
 def get_db_connection():
-    global total_db_connection
     connection = sqlite3.connect('database.db')
-    total_db_connection = total_db_connection + 1
     connection.row_factory = sqlite3.Row
+    app.config['count'] += 1
     return connection
 
 # Function to get a post using its ID
@@ -25,6 +35,7 @@ def get_post(post_id):
 # Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
+app.config['count'] = 0
 
 # Define the main route of the web application 
 @app.route('/')
@@ -86,12 +97,11 @@ def status():
 # Get the metrics of end point
 @app.route('/metrics')
 def metrics():
-    global total_db_connection
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
     response = app.response_class(
-            response=json.dumps({"db_connection_count":"{}".format(total_db_connection),
+            response=json.dumps({"db_connection_count":"{}".format(app.config['count']),
                                  "post_count":"{}".format(len(posts))}
                                  ),
             status=200,
@@ -101,7 +111,4 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
-    logging.basicConfig(format='%(levelname)s:%(name)s:%(asctime)s, %(message)s', datefmt='%d/%m/%Y, %H:%M:%S' ,level=logging.DEBUG)
-    logger = logging.getLogger(__name__)
-    logger.propagate = False
-    app.run(host='0.0.0.0', port='3111') #, debug=True)
+    app.run(host='0.0.0.0', port='3111')#, debug=True)

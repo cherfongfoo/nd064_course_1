@@ -13,20 +13,27 @@ docker logs techtrend_local
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
-INFO:werkzeug:21/08/2021, 16:16:05,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
-INFO:app:21/08/2021, 16:17:54, Article "About Us" retrieved!
-INFO:werkzeug:21/08/2021, 16:17:54, 172.17.0.1 - - [21/Aug/2021 16:17:54] "GET / HTTP/1.1" 200 -
-INFO:app:21/08/2021, 16:17:55, Article "2020 CNCF Annual Report" retrieved!
-INFO:werkzeug:21/08/2021, 16:17:55, 172.17.0.1 - - [21/Aug/2021 16:17:55] "GET /1 HTTP/1.1" 200 -
-INFO:werkzeug:21/08/2021, 16:18:00, 172.17.0.1 - - [21/Aug/2021 16:18:00] "GET /create HTTP/1.1" 200 -
-INFO:werkzeug:21/08/2021, 16:18:01, 172.17.0.1 - - [21/Aug/2021 16:18:01] "GET /favicon.ico HTTP/1.1" 404 -
-INFO:app:21/08/2021, 16:21:53, Article "Fong learns Cloud Native App Dev" created!
-INFO:werkzeug:21/08/2021, 16:21:53, 172.17.0.1 - - [21/Aug/2021 16:21:53] "POST /create HTTP/1.1" 302 -
-INFO:app:21/08/2021, 16:21:53, Article "About Us" retrieved!
-INFO:werkzeug:21/08/2021, 16:21:53, 172.17.0.1 - - [21/Aug/2021 16:21:53] "GET / HTTP/1.1" 200 -
-INFO:app:21/08/2021, 16:22:33, Article "About Us" retrieved!
+INFO:werkzeug:22/08/2021, 15:02:01,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:22/08/2021, 15:02:01,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:22/08/2021, 15:02:13, Article "About Us" retrieved!
+INFO:app:22/08/2021, 15:02:13, Article "About Us" retrieved!
+INFO:werkzeug:22/08/2021, 15:02:13, 172.17.0.1 - - [22/Aug/2021 15:02:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:22/08/2021, 15:02:13, 172.17.0.1 - - [22/Aug/2021 15:02:13] "GET / HTTP/1.1" 200 -
+INFO:app:22/08/2021, 15:02:14, Article "About Us" retrieved!
+INFO:app:22/08/2021, 15:02:14, Article "About Us" retrieved!
+INFO:werkzeug:22/08/2021, 15:02:14, 172.17.0.1 - - [22/Aug/2021 15:02:14] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:22/08/2021, 15:02:14, 172.17.0.1 - - [22/Aug/2021 15:02:14] "GET / HTTP/1.1" 200 -
+INFO:app:22/08/2021, 15:02:24, Article "2020 CNCF Annual Report" retrieved!
+INFO:app:22/08/2021, 15:02:24, Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:22/08/2021, 15:02:24, 172.17.0.1 - - [22/Aug/2021 15:02:24] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:22/08/2021, 15:02:24, 172.17.0.1 - - [22/Aug/2021 15:02:24] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:22/08/2021, 15:02:26, 172.17.0.1 - - [22/Aug/2021 15:02:26] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:22/08/2021, 15:02:26, 172.17.0.1 - - [22/Aug/2021 15:02:26] "GET /create HTTP/1.1" 200 -
+INFO:app:22/08/2021, 15:03:02, Article "Fong learns Cloud Native App Dev" created!
+INFO:werkzeug:22/08/2021, 15:03:02, 172.17.0.1 - - [22/Aug/2021 15:03:02] "POST /create HTTP/1.1" 302 -
+INFO:app:22/08/2021, 15:03:02, Article "Fong learns Cloud Native App Dev" created!
+INFO:werkzeug:22/08/2021, 15:03:02, 172.17.0.1 - - [22/Aug/2021 15:03:02] "POST /create HTTP/1.1" 302 -
+INFO:app:22/08/2021, 15:03:02, Article "About Us" retrieved!
+INFO:werkzeug:22/08/2021, 15:03:02, 172.17.0.1 - - [22/Aug/2021 15:03:02] "GET / HTTP/1.1" 200 -
+INFO:app:22/08/2021, 15:03:02, Article "About Us" retrieved!
+INFO:werkzeug:22/08/2021, 15:03:02, 172.17.0.1 - - [22/Aug/2021 15:03:02] "GET / HTTP/1.1" 200 -
