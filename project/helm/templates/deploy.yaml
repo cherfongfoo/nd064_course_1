@@ -28,8 +28,8 @@ spec:
             memory: {{ .Values.resources.requests.mem }}
             cpu: {{ .Values.resources.requests.cpu }}
           limits:
-            memory: {{ .Values.limits.mem }}
-            cpu: {{ .Values.limits.cpu }}
+            memory: {{ .Values.resources.limits.mem }}
+            cpu: {{ .Values.resources.limits.cpu }}
         livenessProbe:
           httpGet:
             path: {{ .Values.livenessProbe.path }}
