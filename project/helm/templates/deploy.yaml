@@ -38,5 +38,5 @@ spec:
           httpGet:
             path: {{ .Values.readinessProbe.path }}
             port: {{ .Values.containerPort }}
-      imagePullPolicy: {{ .Values.image.pullPolicy}}
+        imagePullPolicy: {{ .Values.image.pullPolicy}}
 status: {}
