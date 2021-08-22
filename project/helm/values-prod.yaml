@@ -8,11 +8,11 @@ replicaCount: 5
 
 resouces:
   requests:
-    cpu: 350m
-    mem: 128Mi
+    cpu: "350m"
+    mem: "128Mi"
   limits:
-    cpu: 500m
-    mem: 256Mi
+    cpu: "500m"
+    mem: "256Mi"
 
 image:
   pullPolicy: Always

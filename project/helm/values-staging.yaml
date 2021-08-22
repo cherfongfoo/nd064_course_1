@@ -8,8 +8,8 @@ replicaCount: 3
 
 resouces:
   requests:
-    cpu: 300m
-    mem: 90Mi
+    cpu: "300m"
+    mem: "90Mi"
   limits:
-    cpu: 500m
-    mem: 128Mi
+    cpu: "500m"
+    mem: "128Mi"
