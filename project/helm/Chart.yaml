@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends
+version: 1.0.0
+description: Udacity Cloud Native project 1
+keywords:
+  - techtrends
+maintainers:
+  - name: cherfongfoo
+    email: fools@singnet.com.sg
